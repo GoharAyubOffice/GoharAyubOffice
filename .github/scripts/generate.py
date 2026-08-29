@@ -18,6 +18,15 @@ USER = os.environ.get("GH_USER", "GoharAyubOffice")
 TOKEN = os.environ.get("GH_TOKEN", "")
 OUT = os.environ.get("OUT_DIR", "dist")
 
+# --- language card tuning -------------------------------------------------
+# Languages you never want on the card. These are almost always vendored
+# engine/SDK code rather than anything you wrote.
+EXCLUDE_LANGS = {"C++", "C", "Objective-C", "Objective-C++", "CMake",
+                 "Makefile", "Assembly", "Batchfile", "Roff", "M4"}
+
+# Repo names to skip entirely (e.g. a fork-like mirror or a template dump).
+EXCLUDE_REPOS = set()
+
 # ---------------------------------------------------------------- theming
 
 THEMES = {
@@ -268,9 +277,12 @@ def fetch_languages():
     if not TOKEN:
         return [("C#", 41.2), ("TypeScript", 22.8), ("Python", 14.6),
                 ("JavaScript", 11.1), ("HTML", 6.0), ("Shell", 4.3)]
+
     headers = {"Authorization": f"bearer {TOKEN}", "User-Agent": "lang-card"}
-    totals = {}
+    shares = {}       # language -> summed share across repos
+    counted = 0
     page = 1
+
     while page <= 4:
         req = urllib.request.Request(
             f"https://api.github.com/users/{USER}/repos?per_page=100&page={page}&type=owner",
@@ -279,19 +291,36 @@ def fetch_languages():
             repos = json.load(r)
         if not repos:
             break
+
         for repo in repos:
-            if repo.get("fork"):
+            if repo.get("fork") or repo["name"] in EXCLUDE_REPOS:
                 continue
             lr = urllib.request.Request(repo["languages_url"], headers=headers)
             try:
                 with urllib.request.urlopen(lr, timeout=30) as r2:
-                    for lang, bytes_ in json.load(r2).items():
-                        totals[lang] = totals.get(lang, 0) + bytes_
+                    langs = json.load(r2)
             except Exception:
                 continue
+
+            langs = {k: v for k, v in langs.items() if k not in EXCLUDE_LANGS}
+            repo_total = sum(langs.values())
+            if not repo_total:
+                continue
+
+            # Normalise this repo to 100% first, so a repo bloated by a
+            # vendored SDK cannot outweigh every other project combined.
+            for lang, bytes_ in langs.items():
+                shares[lang] = shares.get(lang, 0.0) + bytes_ / repo_total
+            counted += 1
+
+            top = max(langs.items(), key=lambda kv: kv[1])[0]
+            print(f"  {repo['name']:<34} {top}")
+
         page += 1
-    grand = sum(totals.values()) or 1
-    ranked = sorted(totals.items(), key=lambda kv: -kv[1])[:6]
+
+    print(f"counted {counted} repos")
+    grand = sum(shares.values()) or 1
+    ranked = sorted(shares.items(), key=lambda kv: -kv[1])[:6]
     return [(k, v * 100 / grand) for k, v in ranked]
 
 
