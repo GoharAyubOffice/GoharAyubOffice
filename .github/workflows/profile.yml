@@ -1,0 +1,43 @@
+# Save at: .github/workflows/profile.yml
+#
+# Builds the animated platformer contribution graph and the language card,
+# then publishes them to the "output" branch of this repo.
+
+name: Build profile graphics
+
+on:
+  schedule:
+    - cron: "0 */8 * * *"     # three times a day
+  workflow_dispatch:           # manual run button
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate SVGs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+          OUT_DIR: dist
+        run: python .github/scripts/generate.py
+
+      - name: Publish to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
