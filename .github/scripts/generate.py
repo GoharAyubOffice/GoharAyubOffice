@@ -143,33 +143,43 @@ def level_of(count, ceiling):
 # ---------------------------------------------------------------- sprite
 
 def sprite(t):
-    """A small pixel character, drawn from rects. Origin at its feet, centred."""
-    p = 2.6  # pixel unit
-    body, dark, eye = t["hero"], t["hero_dark"], "#0d1117" if t is THEMES["dark"] else "#ffffff"
+    """A pixel-art gamepad with legs. Origin at its feet, horizontally centred."""
+    p = 2.2
+    body = "#7c5cff"
+    shade = "#4a32c4"
+    face = "#e9e3ff"
+    btn_a = "#3ce8c4"
+    btn_b = "#ff5c8a"
 
-    def r(x, y, w, h, fill):
-        return f'<rect x="{x*p}" y="{y*p}" width="{w*p}" height="{h*p}" fill="{fill}"/>'
+    def r(x, y, w, h, fill, rx=0):
+        return (f'<rect x="{x*p:.1f}" y="{y*p:.1f}" width="{w*p:.1f}" '
+                f'height="{h*p:.1f}" rx="{rx*p:.1f}" fill="{fill}"/>')
 
-    # body block, 7px wide, 8px tall, feet at y=0 so we build upward with negatives
-    parts = [
-        r(-3, -8, 6, 6, body),      # torso/head
-        r(-3, -9, 6, 1, dark),      # cap
-        r(-4, -7, 1, 3, dark),      # left arm
-        r(3, -7, 1, 3, dark),       # right arm
-        r(-2, -7, 1, 1, eye),       # eye
-        r(1, -7, 1, 1, eye),        # eye
+    def c(x, y, rad, fill):
+        return f'<circle cx="{x*p:.1f}" cy="{y*p:.1f}" r="{rad*p:.1f}" fill="{fill}"/>'
+
+    pad = [
+        r(-5, -11, 10, 7, body, 2),      # controller shell
+        r(-5, -6, 3, 2.5, shade, 1),     # left grip
+        r(2, -6, 3, 2.5, shade, 1),      # right grip
+        r(-1.6, -10, 3.2, 4, face, 1),   # centre screen / logo plate
+        r(-4.2, -8.6, 2.8, 0.9, face),   # d-pad horizontal
+        r(-3.05, -9.7, 0.9, 3.1, face),  # d-pad vertical
+        c(3.2, -9.1, 0.8, btn_a),        # button
+        c(2.0, -7.6, 0.8, btn_b),        # button
     ]
-    legs_a = r(-3, -2, 2, 2, dark) + r(1, -2, 2, 2, dark)
-    legs_b = r(-2, -2, 2, 2, dark) + r(0, -2, 2, 2, dark)
+
+    legs_a = r(-3.2, -3.5, 1.8, 3.5, shade, 0.6) + r(1.4, -2.4, 1.8, 2.4, shade, 0.6)
+    legs_b = r(-3.2, -2.4, 1.8, 2.4, shade, 0.6) + r(1.4, -3.5, 1.8, 3.5, shade, 0.6)
 
     return f"""<g class="hero">
-  {''.join(parts)}
-  <g><g>{legs_a}</g>
-    <animate attributeName="opacity" values="1;0;1" keyTimes="0;0.5;1" dur="0.24s" repeatCount="indefinite"/>
+  <g>{legs_a}
+    <animate attributeName="opacity" values="1;0;1" keyTimes="0;0.5;1" dur="0.26s" repeatCount="indefinite"/>
   </g>
   <g opacity="0">{legs_b}
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="0.24s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="0.26s" repeatCount="indefinite"/>
   </g>
+  {''.join(pad)}
 </g>"""
 
 
