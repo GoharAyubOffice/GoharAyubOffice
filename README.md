@@ -11,8 +11,6 @@
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=3000&pause=800&color=00D4AA&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B+I'm+Gohar;Founder+%40+TOPG+LABS+LTD;Unity+Game+Dev+%2B+Full-Stack+Builder;I+ship+fast+and+break+things+on+purpose" alt="Typing SVG" />
 
 <br/>
-
-**Director @ TOPG LABS LTD** · Bolton, UK 🇬🇧
 MSc Advanced Computer Science · Building games, tools & automations
 
 <br/>
@@ -45,8 +43,7 @@ focus:     [ Unity games, AI tooling, e-commerce, automation ]
 education: MSc Advanced Computer Science — University of Hertfordshire
 
 currently_building:
-  - ScreenshotCraft   # AI + editable-canvas screenshot tool for game devs
-  - Arrow Drive       # Unity mobile puzzle game
+  - Wrecktangle   # Demolition Mobile Game
   - OutSprint         # typing-speed leaderboard
 
 philosophy: "Ship it, measure it, kill it or scale it."
@@ -68,7 +65,6 @@ Published on Google Play under TOPG LABS
 - **Wrecktangle — 3D Demolition** · physics destruction
 - **Soup Sort** · hyper-casual 3D sorting
 - **Crazy Chicken** · arcade runner
-- **Arrow Drive** *(in dev)* · car puzzle
 
 `Unity` `C#` `ASO` `Paid UA`
 
