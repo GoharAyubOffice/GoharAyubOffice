@@ -32,6 +32,24 @@ MSc Advanced Computer Science · Shipping games, tools & automations
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" />
 
+## 🕹️ My Year, As A Level
+
+> Every column is a real week. Stack height = days I shipped code. Watch him run it.
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GoharAyubOffice/GoharAyubOffice/output/platformer-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GoharAyubOffice/GoharAyubOffice/output/platformer.svg" />
+  <img alt="Contribution platformer" src="https://raw.githubusercontent.com/GoharAyubOffice/GoharAyubOffice/output/platformer-dark.svg" width="100%" />
+</picture>
+
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" />
+
 ## 🧠 About Me
 
 ```yaml
@@ -76,22 +94,44 @@ philosophy: "Ship it, measure it, kill it or scale it."
 
 ## 📌 Featured Repositories
 
-<div align="center">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-<a href="https://github.com/GoharAyubOffice/Wrecking-Ball-Swing">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=GoharAyubOffice&repo=Wrecking-Ball-Swing&hide_border=true&title_color=00D4AA&icon_color=00D4AA&text_color=c9d1d9&bg_color=0d1117" />
-</a>
-<a href="https://github.com/GoharAyubOffice/soupsort">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=GoharAyubOffice&repo=soupsort&hide_border=true&title_color=00D4AA&icon_color=00D4AA&text_color=c9d1d9&bg_color=0d1117" />
-</a>
-<a href="https://github.com/GoharAyubOffice/FartFinesta">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=GoharAyubOffice&repo=FartFinesta&hide_border=true&title_color=00D4AA&icon_color=00D4AA&text_color=c9d1d9&bg_color=0d1117" />
-</a>
-<a href="https://github.com/GoharAyubOffice/topglabsltd">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=GoharAyubOffice&repo=topglabsltd&hide_border=true&title_color=00D4AA&icon_color=00D4AA&text_color=c9d1d9&bg_color=0d1117" />
-</a>
+### 🔨 [Wrecking-Ball-Swing](https://github.com/GoharAyubOffice/Wrecking-Ball-Swing)
+Swing-physics demolition mechanics. The prototype work behind **Wrecktangle**.
 
-</div>
+`Unity` · `C#`
+
+</td>
+<td width="50%" valign="top">
+
+### 🍜 [soupsort](https://github.com/GoharAyubOffice/soupsort)
+Colour-sorting puzzle logic and level generation. Live on Google Play.
+
+`Unity` · `C#`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 💨 [FartFinesta](https://github.com/GoharAyubOffice/FartFinesta)
+Arcade experiment — fast build, silly premise, real physics.
+
+`Unity` · `C#`
+
+</td>
+<td width="50%" valign="top">
+
+### 🌐 [topglabsltd](https://github.com/GoharAyubOffice/topglabsltd)
+Company site and portfolio for TOPG LABS LTD.
+
+`Next.js` · `TypeScript`
+
+</td>
+</tr>
+</table>
 
 <br/>
 
@@ -155,7 +195,11 @@ philosophy: "Ship it, measure it, kill it or scale it."
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GoharAyubOffice&layout=compact&langs_count=8&hide_border=true&title_color=00D4AA&text_color=c9d1d9&bg_color=0d1117&card_width=400" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GoharAyubOffice/GoharAyubOffice/output/languages-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GoharAyubOffice/GoharAyubOffice/output/languages.svg" />
+  <img alt="Most used languages" src="https://raw.githubusercontent.com/GoharAyubOffice/GoharAyubOffice/output/languages-dark.svg" width="420" />
+</picture>
 
 </div>
 
