@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="206" viewBox="0 0 420 206" font-family="'Segoe UI',Ubuntu,sans-serif">
+<text x="20" y="32" fill="#e6edf3" font-size="14" font-weight="600">Most Used Languages</text>
+<clipPath id="rr"><rect x="20" y="44" width="380" height="9" rx="4.5"/></clipPath>
+<g clip-path="url(#rr)">
+<rect x="20.0" y="44" width="109.3" height="9" fill="#178600"/>
+<rect x="129.3" y="44" width="99.6" height="9" fill="#3178c6"/>
+<rect x="229.0" y="44" width="69.1" height="9" fill="#3572A5"/>
+<rect x="298.1" y="44" width="35.6" height="9" fill="#8b949e"/>
+<rect x="333.7" y="44" width="34.0" height="9" fill="#f1e05a"/>
+<rect x="367.7" y="44" width="23.0" height="9" fill="#222c37"/>
+</g>
+<circle cx="25" cy="68" r="5" fill="#178600"/>
+<text x="38" y="72" fill="#e6edf3" font-size="12">C#</text>
+<text x="400" y="72" fill="#8b949e" font-size="12" text-anchor="end">28.8%</text>
+<circle cx="25" cy="90" r="5" fill="#3178c6"/>
+<text x="38" y="94" fill="#e6edf3" font-size="12">TypeScript</text>
+<text x="400" y="94" fill="#8b949e" font-size="12" text-anchor="end">26.2%</text>
+<circle cx="25" cy="112" r="5" fill="#3572A5"/>
+<text x="38" y="116" fill="#e6edf3" font-size="12">Python</text>
+<text x="400" y="116" fill="#8b949e" font-size="12" text-anchor="end">18.2%</text>
+<circle cx="25" cy="134" r="5" fill="#8b949e"/>
+<text x="38" y="138" fill="#e6edf3" font-size="12">Dockerfile</text>
+<text x="400" y="138" fill="#8b949e" font-size="12" text-anchor="end">9.4%</text>
+<circle cx="25" cy="156" r="5" fill="#f1e05a"/>
+<text x="38" y="160" fill="#e6edf3" font-size="12">JavaScript</text>
+<text x="400" y="160" fill="#8b949e" font-size="12" text-anchor="end">8.9%</text>
+<circle cx="25" cy="178" r="5" fill="#222c37"/>
+<text x="38" y="182" fill="#e6edf3" font-size="12">ShaderLab</text>
+<text x="400" y="182" fill="#8b949e" font-size="12" text-anchor="end">6.1%</text>
+</svg>
